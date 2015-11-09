@@ -17,7 +17,7 @@ module.exports = function (grunt) {
 
   // Load grunt tasks automatically, when needed
   require('jit-grunt')(grunt, {
-    express: 'grunt-express-server',
+    // express: 'grunt-express-server',
     useminPrepare: 'grunt-usemin',
     ngtemplates: 'grunt-angular-templates',
     cdnify: 'grunt-google-cdn',
@@ -38,25 +38,19 @@ module.exports = function (grunt) {
       app: require('./bower.json').appPath || 'app',
       dist: 'dist'
     },
-    express: {
-      options: {
-        port: process.env.PORT || 9000
-      },
-      dev: {
+
+    connect: {
+      server: {
         options: {
-          script: 'server/app.js',
-          debug: true
-        }
-      },
-      prod: {
-        options: {
-          script: 'dist/server/app.js'
+          port: 9000,
+          base: '<%= yeoman.app %>'
         }
       }
     },
+
     open: {
       server: {
-        url: 'http://localhost:<%= express.options.port %>'
+        url: 'http://localhost:9000'//<%= express.options.port %>'
       }
     },
     watch: {
@@ -107,16 +101,16 @@ module.exports = function (grunt) {
           livereload: true
         }
       },
-      express: {
-        files: [
-          'server/**/*.{js,json}'
-        ],
-        tasks: ['express:dev', 'wait'],
-        options: {
-          livereload: true,
-          nospawn: true //Without this option specified express won't be reloaded
-        }
-      }
+      // express: {
+      //   files: [
+      //     'server/**/*.{js,json}'
+      //   ],
+      //   tasks: ['express:dev', 'wait'],
+      //   options: {
+      //     livereload: true,
+      //     nospawn: true //Without this option specified express won't be reloaded
+      //   }
+      // }
     },
 
     stylus:{
@@ -503,7 +497,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['build', 'env:all', 'env:prod', 'express:prod', 'wait', 'open', 'express-keepalive']);
+      return grunt.task.run(['build', 'env:all', 'env:prod', 'express:prod', 'wait', 'connect', 'express-keepalive']);
     }
 
     if (target === 'debug') {
@@ -527,6 +521,7 @@ module.exports = function (grunt) {
       'wiredep',
       'autoprefixer',
       // 'express:dev',
+      'connect',
       'wait',
       'open',
       'watch'
