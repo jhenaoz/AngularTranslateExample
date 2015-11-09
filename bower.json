@@ -1,0 +1,25 @@
+{
+  "name": "checked-up",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.3.0",
+    "angular-animate": "^1.3.0",
+    "angular-aria": "^1.3.0",
+    "angular-material-icons": "0.6.0",
+    "angular-messages": "^1.3.0",
+    "angular-route": "^1.3.0",
+    "angular-sanitize": "^1.3.0",
+    "angular-touch": "^1.3.0",
+    "angular-ui-router": "~0.2.15",
+    "jstzdetect": "~1.0.6",
+    "svg-morpheus": "~0.1.8",
+    "angular-material": "0.11.4"
+  },
+  "devDependencies": {
+    "bourbon": "4.2.5",
+    "compass-breakpoint": "breakpoint-sass#~2.6.1",
+    "angular-mocks": "^1.3.0"
+  },
+  "appPath": "app",
+  "moduleName": "checkedUpApp"
+}

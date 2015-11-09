@@ -1,0 +1,19 @@
+{
+  "apps" : [{
+    "name"        : "CheckedUp_production",
+    "cwd"         : "/var/www/checkedup/production/dist/server",
+    "out_file"    : "../checkedup-prod.log",
+    "error_file"  : "../checkedup-prod.error.log",
+    "pid_file"    : "../checkedup-prod.pid",
+    "script"      : "app.js",
+    "merge_logs"  : true,
+    "args"        : "",
+    "watch"       : false,
+    "node_args"   : "",
+    "instances"   : "1",
+    "exec_mode"   : "fork_mode",
+    "env": {
+        "NODE_ENV": "production"
+    }
+  }]
+}

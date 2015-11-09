@@ -1,0 +1,20 @@
+{
+  "apps" : [{
+    "name"        : "CheckedUp_stage",
+    "cwd"         : "/var/www/checkedup/stage/dist/server",
+    "out_file"    : "../checkedup-dev.log",
+    "error_file"  : "../checkedup-dev.error.log",
+    "pid_file"    : "../checkedup-dev.pid",
+    "script"      : "app.js",
+    "merge_logs"  : true,
+    "args"        : "",
+    "watch"       : false,
+    "node_args"   : "",
+    "instances"   : "1",
+    "exec_mode"   : "fork_mode",
+    "env": {
+        "NODE_ENV": "stage"
+    }
+  }]
+}
+
