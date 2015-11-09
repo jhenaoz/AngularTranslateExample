@@ -30,12 +30,14 @@
     "grunt-rev": "^0.1.0",
     "jit-grunt": "^0.9.1",
     "jshint-stylish": "^1.0.0",
+    "karma": "^0.13.0 || >= 0.14.0-rc.0",
+    "jasmine-core": "*",
     "karma-jasmine": "*",
     "time-grunt": "^1.0.0"
   },
   "engines": {
-    "npm": "2.11.0",
-    "node": "2.2.1"
+    "npm": "2.14.4",
+    "node": "v4.1.2"
   },
   "scripts": {
     "test": "grunt test"
