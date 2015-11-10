@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc overview
- * @name checkedUpApp
+ * @name Viamericas
  * @description
- * # checkedUpApp
+ * # Viamericas
  *
  * Main module of the application.
  */
@@ -16,17 +16,16 @@
     'ngRoute',
     'ui.router',
     'ngSanitize',
-    'ngTouch',
-    'ngMaterial',
+    'ngTouch'
     ])
     .config(function ($stateProvider , $locationProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');
         $stateProvider
-        .state('register',{
+        .state('home',{
             url:'/',
-            templateUrl:'scripts/home/register.html',
-            controller:'RegisterCtrl'
+            templateUrl:'scripts/home/home.html',
+            controller:'HomeCtrl'
 
         });
 
