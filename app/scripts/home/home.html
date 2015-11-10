@@ -1,5 +1,9 @@
 <section>
     <div>
-        HELLO WORLD
+        <h1>{{ 'HEADLINE' | translate }}</h1>
+        <p>{{ 'INTRO_TEXT' | translate }}</p>
+
+        <button ng-click="changeLanguage('en')">{{ 'ENGLISH' | translate }}</button>
+        <button ng-click="changeLanguage('es')">{{ 'SPANISH' | translate }}</button>
     </div>
 </section>

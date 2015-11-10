@@ -16,18 +16,19 @@
     'ngRoute',
     'ui.router',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'pascalprecht.translate'
     ])
-    .config(function ($stateProvider , $locationProvider, $urlRouterProvider) {
+    .config(function ($stateProvider , $locationProvider, $urlRouterProvider, $translateProvider) {
+
+        $translateProvider.useStaticFilesLoader({
+            prefix: '/languages/',
+            suffix: '.index.json'
+        });
+
+        $translateProvider.preferredLanguage('en');
 
         $urlRouterProvider.otherwise('/');
-        $stateProvider
-        .state('home',{
-            url:'/',
-            templateUrl:'scripts/home/home.html',
-            controller:'HomeCtrl'
-
-        });
 
     });
 
